@@ -83,6 +83,8 @@ void printStudents(const vector<Student> students, const char* title) {
 	cout << "\t\t" << title << ":\n\n";
 
 	for (vector<Student>::const_iterator it = students.cbegin(); it < students.cend(); ++it) {
+		if (RQ_AVERAGE <= it->average && 0 == strcmp(RQ_CITY, it->city))
+			cout << "[*]";
 		cout << "Фамилия: " << it->name << endl
 			<< "Город: " << it->city << endl
 			<< "Оценки: "
