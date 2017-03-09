@@ -1,4 +1,4 @@
-// задача.cpp: определяет точку входа для консольного приложения.
+// Р·Р°РґР°С‡Р°.cpp: РѕРїСЂРµРґРµР»СЏРµС‚ С‚РѕС‡РєСѓ РІС…РѕРґР° РґР»СЏ РєРѕРЅСЃРѕР»СЊРЅРѕРіРѕ РїСЂРёР»РѕР¶РµРЅРёСЏ.
 //
 
 #include "stdafx.h"
@@ -12,7 +12,7 @@
 #include "STUDENT_STRUCT.h"
 
 #define FILE_NAME "1.txt"
-#define RQ_CITY "Москва"
+#define RQ_CITY "РњРѕСЃРєРІР°"
 #define RQ_AVERAGE 5
 
 
@@ -28,12 +28,12 @@ int main()
 
 	vector<Student> students;
 	
-#pragma region Чтение данных из файла
+#pragma region Р§С‚РµРЅРёРµ РґР°РЅРЅС‹С… РёР· С„Р°Р№Р»Р°
 
 	FILE* f_ptr = fopen(FILE_NAME, "r");
 
 	if (NULL == f_ptr) {
-		cerr << "Не удалось отрыть файл для обработки.\n" << ferror(f_ptr) << endl;
+		cerr << "РќРµ СѓРґР°Р»РѕСЃСЊ РѕС‚СЂС‹С‚СЊ С„Р°Р№Р» РґР»СЏ РѕР±СЂР°Р±РѕС‚РєРё.\n" << ferror(f_ptr) << endl;
 		return -1;
 	}
 
@@ -46,7 +46,7 @@ int main()
 			break;
 		}
 
-		//Подсчет среднего бала
+		//РџРѕРґСЃС‡РµС‚ СЃСЂРµРґРЅРµРіРѕ Р±Р°Р»Р°
 		st.average  = st.marks[0];
 		st.average += st.marks[1];
 		st.average += st.marks[2];
@@ -57,7 +57,7 @@ int main()
 
 	size_t studentCount = students.size();
 	if (0 == studentCount) {
-		cout << "Файл не содержит данных для обработки" << endl;
+		cout << "Р¤Р°Р№Р» РЅРµ СЃРѕРґРµСЂР¶РёС‚ РґР°РЅРЅС‹С… РґР»СЏ РѕР±СЂР°Р±РѕС‚РєРё" << endl;
 		getch();
 		return 0;
 	}
@@ -65,15 +65,15 @@ int main()
 #pragma endregion
 
 	
-	//Вывод данных до сортировки
-	printStudents(students, "До сортировки");
+	//Р’С‹РІРѕРґ РґР°РЅРЅС‹С… РґРѕ СЃРѕСЂС‚РёСЂРѕРІРєРё
+	printStudents(students, "Р”Рѕ СЃРѕСЂС‚РёСЂРѕРІРєРё");
 	getch();
 
-	// Сортировка
+	// РЎРѕСЂС‚РёСЂРѕРІРєР°
 	sort(students.begin(), students.end(), compare);
 
-	//Вывод данных после сортировки
-	printStudents(students, "После сортировки");
+	//Р’С‹РІРѕРґ РґР°РЅРЅС‹С… РїРѕСЃР»Рµ СЃРѕСЂС‚РёСЂРѕРІРєРё
+	printStudents(students, "РџРѕСЃР»Рµ СЃРѕСЂС‚РёСЂРѕРІРєРё");
 	getch();
 
 	return 0;
@@ -83,13 +83,13 @@ void printStudents(const vector<Student> students, const char* title) {
 	cout << "\t\t" << title << ":\n\n";
 
 	for (vector<Student>::const_iterator it = students.cbegin(); it < students.cend(); ++it) {
-		cout << "Фамилия: " << it->name << endl
-			<< "Город: " << it->city << endl
-			<< "Оценки: "
+		cout << "Р¤Р°РјРёР»РёСЏ: " << it->name << endl
+			<< "Р“РѕСЂРѕРґ: " << it->city << endl
+			<< "РћС†РµРЅРєРё: "
 			<< it->marks[0] << ' '
 			<< it->marks[1] << ' '
 			<< it->marks[2] << endl
-			<< "Средний балл: " << it->average
+			<< "РЎСЂРµРґРЅРёР№ Р±Р°Р»Р»: " << it->average
 			<< endl << endl;
 	}
 }
