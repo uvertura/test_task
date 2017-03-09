@@ -1,0 +1,4 @@
+*.cmd encoding=cp866
+*.bat encoding=cp866
+*.cpp encoding=cp1251
+*.h encoding=cp1251
