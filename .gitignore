@@ -27,6 +27,7 @@ obj/
 TestResults/
 .vs/
 Debug/
+*.VC.VC.opendb
 ###################
 # Web publish log #
 ###################

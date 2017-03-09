@@ -69,7 +69,7 @@ int main()
 	printStudents(students, "До сортировки");
 	getch();
 
-	//Сортировка
+	// Сортировка
 	sort(students.begin(), students.end(), compare);
 
 	//Вывод данных после сортировки
